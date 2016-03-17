@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_M19vcOxBEeWfRb8rLSHUyQ">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_aPmDAOxBEeWfRb8rLSHUyQ" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_ONY_8OxCEeWfRb8rLSHUyQ" elementId="com.ifpen.school.ui.command.generatehtml" commandName="Generate HTML" description="Generate a HTML file for school"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_suj4sOxBEeWfRb8rLSHUyQ" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_ZNw1wOxFEeWfRb8rLSHUyQ" elementId="com.ifpen.school.ui.handler.0" contributionURI="bundleclass://com.ifpen.school.ui/com.ifpen.school.ui.handlers.GenerateHtmlHandler" command="_ONY_8OxCEeWfRb8rLSHUyQ"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_tLZlsOxBEeWfRb8rLSHUyQ" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_TXja4OxGEeWfRb8rLSHUyQ" elementId="com.ifpen.school.ui.menucontribution.0" positionInParent="after=additions" parentId="com.ifpen.school.presentation.SchoolEditorID">
+      <children xsi:type="menu:MenuSeparator" xmi:id="_sBJfcOxJEeWfRb8rLSHUyQ" elementId="com.ifpen.school.ui.menuseparator.0"/>
+      <children xsi:type="menu:Menu" xmi:id="_38WGIOxJEeWfRb8rLSHUyQ" elementId="com.ifpen.school.ui.menu.generate" label="Generate">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_YeAXUOxGEeWfRb8rLSHUyQ" elementId="com.ifpen.school.ui.handledmenuitem.generatehtml" label="Generate HTML" command="_ONY_8OxCEeWfRb8rLSHUyQ">
+          <visibleWhen xsi:type="ui:CoreExpression" xmi:id="_Fy1KQOxJEeWfRb8rLSHUyQ" coreExpressionId="com.ifpen.school.ui.schoolSelected"/>
+        </children>
+      </children>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>

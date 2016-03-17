@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="com.ifpen.school.ui.fragment"
+         point="org.eclipse.e4.workbench.model">
+      <fragment
+            uri="fragment.e4xmi">
+      </fragment>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="com.ifpen.school.ui.schoolSelected">
+         <iterate>
+            <instanceof
+                  value="com.ifpen.school.SchoolYear">
+            </instanceof>
+         </iterate>
+      </definition>
+   </extension>
+
+</plugin>
