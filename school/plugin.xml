@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            genModel="model/school.genmodel"
+            uri="http://com.ifpen.school/1.0"
+            class="com.ifpen.school.SchoolPackage">
+      </package>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            uri="http://com.ifpen.school/1.0"
+            class="com.ifpen.school.impl.SchoolFactoryImplExt">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            uri="http://com.ifpen.school/1.0"
+            class="com.ifpen.school.impl.SchoolFactoryImpl">
+      </factory>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated school -->
+      <package
+            uri="http://com.ifpen.school/1.0"
+            class="com.ifpen.school.MSchoolPackage"
+            genModel="model/school.genmodel"/>
+   </extension>
+
+</plugin>

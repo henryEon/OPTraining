@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<school:SchoolYear
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:school="http://com.ifpen.school/1.0"
+    xsi:schemaLocation="http://com.ifpen.school/1.0 school.ecore">
+  <ecole eleves="//@eleves.0 //@eleves.2"
+      niveau="//@niveau.0"
+      name="cm1"/>
+  <ecole eleves="//@eleves.1 //@eleves.3"
+      niveau="//@niveau.1"
+      name="cm2"/>
+  <ecole eleves="//@eleves.4"
+      niveau="//@niveau.2"
+      name="ce1"/>
+  <eleves name="alain"/>
+  <eleves name="andre"/>
+  <eleves name="bernard"/>
+  <eleves name="bertrand"/>
+  <eleves name="charles"/>
+  <niveau level="4"/>
+  <niveau level="5"/>
+  <niveau level="6"/>
+</school:SchoolYear>
