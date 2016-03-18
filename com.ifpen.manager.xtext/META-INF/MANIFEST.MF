@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.ifpen.manager.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.ifpen.manager.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.ifpen.manager.xtext.projectDsl,
+ com.ifpen.manager.xtext.services,
+ com.ifpen.manager.xtext.projectDsl.impl,
+ com.ifpen.manager.xtext.validation,
+ com.ifpen.manager.xtext.projectDsl.util,
+ com.ifpen.manager.xtext.scoping,
+ com.ifpen.manager.xtext.generator,
+ com.ifpen.manager.xtext.parser.antlr.internal,
+ com.ifpen.manager.xtext,
+ com.ifpen.manager.xtext.parser.antlr,
+ com.ifpen.manager.xtext.serializer
+Import-Package: org.apache.log4j
