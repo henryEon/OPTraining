@@ -9,6 +9,7 @@ import com.ifpen.manager.xtext.projectDsl.Employee;
 import com.ifpen.manager.xtext.projectDsl.Employees;
 import com.ifpen.manager.xtext.projectDsl.Project;
 import com.ifpen.manager.xtext.projectDsl.ProjectDslPackage;
+import com.ifpen.manager.xtext.projectDsl.Task;
 import com.ifpen.manager.xtext.services.ProjectDslGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -46,6 +47,9 @@ public class ProjectDslSemanticSequencer extends AbstractDelegatingSemanticSeque
 				return; 
 			case ProjectDslPackage.PROJECT:
 				sequence_Project(context, (Project) semanticObject); 
+				return; 
+			case ProjectDslPackage.TASK:
+				sequence_Task(context, (Task) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -105,18 +109,30 @@ public class ProjectDslSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     Project returns Project
 	 *
 	 * Constraint:
-	 *     (name=ID type=taskType)
+	 *     (name=ID type=taskType tasks+=Task+)
 	 */
 	protected void sequence_Project(ISerializationContext context, Project semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Task returns Task
+	 *
+	 * Constraint:
+	 *     (name=ID type=taskType)
+	 */
+	protected void sequence_Task(ISerializationContext context, Task semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ProjectDslPackage.Literals.PROJECT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProjectDslPackage.Literals.PROJECT__NAME));
-			if (transientValues.isValueTransient(semanticObject, ProjectDslPackage.Literals.PROJECT__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProjectDslPackage.Literals.PROJECT__TYPE));
+			if (transientValues.isValueTransient(semanticObject, ProjectDslPackage.Literals.TASK__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProjectDslPackage.Literals.TASK__NAME));
+			if (transientValues.isValueTransient(semanticObject, ProjectDslPackage.Literals.TASK__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProjectDslPackage.Literals.TASK__TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getProjectAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getProjectAccess().getTypeTaskTypeEnumRuleCall_3_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getTaskAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getTaskAccess().getTypeTaskTypeEnumRuleCall_2_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	

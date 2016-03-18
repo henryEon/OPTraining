@@ -3,14 +3,17 @@
  */
 package com.ifpen.manager.xtext.validation
 
+import com.ifpen.manager.xtext.projectDsl.Employee
+import com.ifpen.manager.xtext.projectDsl.ProjectDslPackage
+import org.eclipse.xtext.validation.Check
 
 /**
  * This class contains custom validation rules. 
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class ProjectDslValidator extends AbstractProjectDslValidator {
-	
+
 //  public static val INVALID_NAME = 'invalidName'
 //
 //	@Check
@@ -21,5 +24,16 @@ class ProjectDslValidator extends AbstractProjectDslValidator {
 //					INVALID_NAME)
 //		}
 //	}
-	
+
+
+	public static val INVALID_WEIGHT = "invalidWeight"
+
+	@Check
+	def checkWeight(Employee e) {
+
+		if (e.weight > 0 && e.weight < 30) {
+			warning('Employee trop leger', ProjectDslPackage.Literals.EMPLOYEE__WEIGHT, INVALID_WEIGHT)
+		}
+	}
+
 }

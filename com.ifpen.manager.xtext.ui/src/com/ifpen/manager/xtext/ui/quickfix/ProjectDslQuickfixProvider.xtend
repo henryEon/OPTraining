@@ -3,11 +3,15 @@
  */
 package com.ifpen.manager.xtext.ui.quickfix
 
+import com.ifpen.manager.xtext.validation.ProjectDslValidator
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
+import org.eclipse.xtext.ui.editor.quickfix.Fix
+import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
+import org.eclipse.xtext.validation.Issue
 
 /**
  * Custom quickfixes.
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#quick-fixes
  */
 class ProjectDslQuickfixProvider extends DefaultQuickfixProvider {
@@ -21,4 +25,10 @@ class ProjectDslQuickfixProvider extends DefaultQuickfixProvider {
 //			xtextDocument.replace(issue.offset, 1, firstLetter.toUpperCase)
 //		]
 //	}
+	@Fix(ProjectDslValidator::INVALID_WEIGHT)
+	def fixWeight(Issue issue, IssueResolutionAcceptor acceptor) {
+		acceptor.accept(issue, "Trop léger", "Small minimum", null,
+          [ it.getXtextDocument().replace(issue.offset, issue.getLength(), "75")]);
+	}
+
 }

@@ -60,6 +60,15 @@ public interface ProjectDslFactory extends EFactory
   Project createProject();
 
   /**
+   * Returns a new object of class '<em>Task</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Task</em>'.
+   * @generated
+   */
+  Task createTask();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

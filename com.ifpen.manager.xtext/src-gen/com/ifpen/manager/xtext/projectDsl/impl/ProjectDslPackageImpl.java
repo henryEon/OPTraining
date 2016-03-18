@@ -9,6 +9,7 @@ import com.ifpen.manager.xtext.projectDsl.Employees;
 import com.ifpen.manager.xtext.projectDsl.Project;
 import com.ifpen.manager.xtext.projectDsl.ProjectDslFactory;
 import com.ifpen.manager.xtext.projectDsl.ProjectDslPackage;
+import com.ifpen.manager.xtext.projectDsl.Task;
 import com.ifpen.manager.xtext.projectDsl.taskType;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -54,6 +55,13 @@ public class ProjectDslPackageImpl extends EPackageImpl implements ProjectDslPac
    * @generated
    */
   private EClass projectEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass taskEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -260,6 +268,46 @@ public class ProjectDslPackageImpl extends EPackageImpl implements ProjectDslPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getProject_Tasks()
+  {
+    return (EReference)projectEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTask()
+  {
+    return taskEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTask_Name()
+  {
+    return (EAttribute)taskEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTask_Type()
+  {
+    return (EAttribute)taskEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum gettaskType()
   {
     return taskTypeEEnum;
@@ -311,6 +359,11 @@ public class ProjectDslPackageImpl extends EPackageImpl implements ProjectDslPac
     projectEClass = createEClass(PROJECT);
     createEAttribute(projectEClass, PROJECT__NAME);
     createEAttribute(projectEClass, PROJECT__TYPE);
+    createEReference(projectEClass, PROJECT__TASKS);
+
+    taskEClass = createEClass(TASK);
+    createEAttribute(taskEClass, TASK__NAME);
+    createEAttribute(taskEClass, TASK__TYPE);
 
     // Create enums
     taskTypeEEnum = createEEnum(TASK_TYPE);
@@ -363,6 +416,11 @@ public class ProjectDslPackageImpl extends EPackageImpl implements ProjectDslPac
     initEClass(projectEClass, Project.class, "Project", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProject_Name(), ecorePackage.getEString(), "name", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProject_Type(), this.gettaskType(), "type", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProject_Tasks(), this.getTask(), null, "tasks", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(taskEClass, Task.class, "Task", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTask_Name(), ecorePackage.getEString(), "name", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTask_Type(), this.gettaskType(), "type", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(taskTypeEEnum, taskType.class, "taskType");

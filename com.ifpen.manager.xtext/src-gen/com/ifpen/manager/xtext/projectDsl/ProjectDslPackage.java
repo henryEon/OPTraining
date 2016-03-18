@@ -207,13 +207,59 @@ public interface ProjectDslPackage extends EPackage
   int PROJECT__TYPE = 1;
 
   /**
+   * The feature id for the '<em><b>Tasks</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROJECT__TASKS = 2;
+
+  /**
    * The number of structural features of the '<em>Project</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_FEATURE_COUNT = 2;
+  int PROJECT_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link com.ifpen.manager.xtext.projectDsl.impl.TaskImpl <em>Task</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.ifpen.manager.xtext.projectDsl.impl.TaskImpl
+   * @see com.ifpen.manager.xtext.projectDsl.impl.ProjectDslPackageImpl#getTask()
+   * @generated
+   */
+  int TASK = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TASK__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TASK__TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>Task</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TASK_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.ifpen.manager.xtext.projectDsl.taskType <em>task Type</em>}' enum.
@@ -223,7 +269,7 @@ public interface ProjectDslPackage extends EPackage
    * @see com.ifpen.manager.xtext.projectDsl.impl.ProjectDslPackageImpl#gettaskType()
    * @generated
    */
-  int TASK_TYPE = 4;
+  int TASK_TYPE = 5;
 
 
   /**
@@ -364,6 +410,49 @@ public interface ProjectDslPackage extends EPackage
    * @generated
    */
   EAttribute getProject_Type();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.ifpen.manager.xtext.projectDsl.Project#getTasks <em>Tasks</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Tasks</em>'.
+   * @see com.ifpen.manager.xtext.projectDsl.Project#getTasks()
+   * @see #getProject()
+   * @generated
+   */
+  EReference getProject_Tasks();
+
+  /**
+   * Returns the meta object for class '{@link com.ifpen.manager.xtext.projectDsl.Task <em>Task</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Task</em>'.
+   * @see com.ifpen.manager.xtext.projectDsl.Task
+   * @generated
+   */
+  EClass getTask();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.ifpen.manager.xtext.projectDsl.Task#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.ifpen.manager.xtext.projectDsl.Task#getName()
+   * @see #getTask()
+   * @generated
+   */
+  EAttribute getTask_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.ifpen.manager.xtext.projectDsl.Task#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see com.ifpen.manager.xtext.projectDsl.Task#getType()
+   * @see #getTask()
+   * @generated
+   */
+  EAttribute getTask_Type();
 
   /**
    * Returns the meta object for enum '{@link com.ifpen.manager.xtext.projectDsl.taskType <em>task Type</em>}'.
@@ -509,6 +598,40 @@ public interface ProjectDslPackage extends EPackage
      * @generated
      */
     EAttribute PROJECT__TYPE = eINSTANCE.getProject_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Tasks</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROJECT__TASKS = eINSTANCE.getProject_Tasks();
+
+    /**
+     * The meta object literal for the '{@link com.ifpen.manager.xtext.projectDsl.impl.TaskImpl <em>Task</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.ifpen.manager.xtext.projectDsl.impl.TaskImpl
+     * @see com.ifpen.manager.xtext.projectDsl.impl.ProjectDslPackageImpl#getTask()
+     * @generated
+     */
+    EClass TASK = eINSTANCE.getTask();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TASK__NAME = eINSTANCE.getTask_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TASK__TYPE = eINSTANCE.getTask_Type();
 
     /**
      * The meta object literal for the '{@link com.ifpen.manager.xtext.projectDsl.taskType <em>task Type</em>}' enum.

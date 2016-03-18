@@ -26,6 +26,11 @@
     <genClasses ecoreClass="ProjectDsl.ecore#//Project">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProjectDsl.ecore#//Project/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProjectDsl.ecore#//Project/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProjectDsl.ecore#//Project/tasks"/>
+    </genClasses>
+    <genClasses ecoreClass="ProjectDsl.ecore#//Task">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProjectDsl.ecore#//Task/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProjectDsl.ecore#//Task/type"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

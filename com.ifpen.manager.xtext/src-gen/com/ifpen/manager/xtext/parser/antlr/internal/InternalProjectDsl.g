@@ -229,9 +229,9 @@ ruleEmployee returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_2='weigh'
+			otherlv_2='weight'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getEmployeeAccess().getWeighKeyword_2_0());
+				newLeafNode(otherlv_2, grammarAccess.getEmployeeAccess().getWeightKeyword_2_0());
 			}
 			(
 				(
@@ -335,6 +335,93 @@ ruleProject returns [EObject current=null]
 						$current,
 						"type",
 						lv_type_3_0,
+						"com.ifpen.manager.xtext.ProjectDsl.taskType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4='{'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getProjectAccess().getLeftCurlyBracketKeyword_4());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getProjectAccess().getTasksTaskParserRuleCall_5_0());
+				}
+				lv_tasks_5_0=ruleTask
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getProjectRule());
+					}
+					add(
+						$current,
+						"tasks",
+						lv_tasks_5_0,
+						"com.ifpen.manager.xtext.ProjectDsl.Task");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+		otherlv_6='}'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getProjectAccess().getRightCurlyBracketKeyword_6());
+		}
+	)
+;
+
+// Entry rule entryRuleTask
+entryRuleTask returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTaskRule()); }
+	iv_ruleTask=ruleTask
+	{ $current=$iv_ruleTask.current; }
+	EOF;
+
+// Rule Task
+ruleTask returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Task'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTaskAccess().getTaskKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getTaskAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTaskRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTaskAccess().getTypeTaskTypeEnumRuleCall_2_0());
+				}
+				lv_type_2_0=ruletaskType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTaskRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_2_0,
 						"com.ifpen.manager.xtext.ProjectDsl.taskType");
 					afterParserOrEnumRuleCall();
 				}

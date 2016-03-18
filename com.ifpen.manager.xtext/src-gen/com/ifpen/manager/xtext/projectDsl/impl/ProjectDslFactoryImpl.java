@@ -70,6 +70,7 @@ public class ProjectDslFactoryImpl extends EFactoryImpl implements ProjectDslFac
       case ProjectDslPackage.EMPLOYEES: return createEmployees();
       case ProjectDslPackage.EMPLOYEE: return createEmployee();
       case ProjectDslPackage.PROJECT: return createProject();
+      case ProjectDslPackage.TASK: return createTask();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -151,6 +152,17 @@ public class ProjectDslFactoryImpl extends EFactoryImpl implements ProjectDslFac
   {
     ProjectImpl project = new ProjectImpl();
     return project;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Task createTask()
+  {
+    TaskImpl task = new TaskImpl();
+    return task;
   }
 
   /**

@@ -3,29 +3,26 @@
  */
 package com.ifpen.manager.xtext.projectDsl;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Project</b></em>'.
+ * A representation of the model object '<em><b>Task</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.ifpen.manager.xtext.projectDsl.Project#getName <em>Name</em>}</li>
- *   <li>{@link com.ifpen.manager.xtext.projectDsl.Project#getType <em>Type</em>}</li>
- *   <li>{@link com.ifpen.manager.xtext.projectDsl.Project#getTasks <em>Tasks</em>}</li>
+ *   <li>{@link com.ifpen.manager.xtext.projectDsl.Task#getName <em>Name</em>}</li>
+ *   <li>{@link com.ifpen.manager.xtext.projectDsl.Task#getType <em>Type</em>}</li>
  * </ul>
  *
- * @see com.ifpen.manager.xtext.projectDsl.ProjectDslPackage#getProject()
+ * @see com.ifpen.manager.xtext.projectDsl.ProjectDslPackage#getTask()
  * @model
  * @generated
  */
-public interface Project extends EObject
+public interface Task extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -37,14 +34,14 @@ public interface Project extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see com.ifpen.manager.xtext.projectDsl.ProjectDslPackage#getProject_Name()
+   * @see com.ifpen.manager.xtext.projectDsl.ProjectDslPackage#getTask_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link com.ifpen.manager.xtext.projectDsl.Project#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.ifpen.manager.xtext.projectDsl.Task#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -65,14 +62,14 @@ public interface Project extends EObject
    * @return the value of the '<em>Type</em>' attribute.
    * @see com.ifpen.manager.xtext.projectDsl.taskType
    * @see #setType(taskType)
-   * @see com.ifpen.manager.xtext.projectDsl.ProjectDslPackage#getProject_Type()
+   * @see com.ifpen.manager.xtext.projectDsl.ProjectDslPackage#getTask_Type()
    * @model
    * @generated
    */
   taskType getType();
 
   /**
-   * Sets the value of the '{@link com.ifpen.manager.xtext.projectDsl.Project#getType <em>Type</em>}' attribute.
+   * Sets the value of the '{@link com.ifpen.manager.xtext.projectDsl.Task#getType <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' attribute.
@@ -82,20 +79,4 @@ public interface Project extends EObject
    */
   void setType(taskType value);
 
-  /**
-   * Returns the value of the '<em><b>Tasks</b></em>' containment reference list.
-   * The list contents are of type {@link com.ifpen.manager.xtext.projectDsl.Task}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Tasks</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Tasks</em>' containment reference list.
-   * @see com.ifpen.manager.xtext.projectDsl.ProjectDslPackage#getProject_Tasks()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Task> getTasks();
-
-} // Project
+} // Task

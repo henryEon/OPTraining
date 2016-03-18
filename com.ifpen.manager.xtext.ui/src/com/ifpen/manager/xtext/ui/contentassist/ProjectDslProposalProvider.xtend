@@ -3,10 +3,31 @@
  */
 package com.ifpen.manager.xtext.ui.contentassist
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.xtext.RuleCall
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
+import org.eclipse.xtext.Assignment
 
 /**
  * See https://www.eclipse.org/Xtext/documentation/304_ide_concepts.html#content-assist
  * on how to customize the content assistant.
  */
 class ProjectDslProposalProvider extends AbstractProjectDslProposalProvider {
+	
+	override complete_Company(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.complete_Company(model, ruleCall, context, acceptor)
+	}
+	
+	override complete_Employee(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.complete_Employee(model, ruleCall, context, acceptor)
+	}
+	
+	override completeEmployee_Height(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeEmployee_Height(model, assignment, context, acceptor)
+		acceptor.accept(createCompletionProposal("100", "S", null, context))
+		acceptor.accept(createCompletionProposal("175", "XS", null, context))
+		acceptor.accept(createCompletionProposal("190", "XX", null, context))
+	}
+	
 }

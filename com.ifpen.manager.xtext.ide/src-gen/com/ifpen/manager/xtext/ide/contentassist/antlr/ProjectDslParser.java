@@ -42,6 +42,7 @@ public class ProjectDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEmployeeAccess().getGroup_2(), "rule__Employee__Group_2__0");
 					put(grammarAccess.getEmployeeAccess().getGroup_3(), "rule__Employee__Group_3__0");
 					put(grammarAccess.getProjectAccess().getGroup(), "rule__Project__Group__0");
+					put(grammarAccess.getTaskAccess().getGroup(), "rule__Task__Group__0");
 					put(grammarAccess.getCompanyAccess().getNameAssignment_1(), "rule__Company__NameAssignment_1");
 					put(grammarAccess.getCompanyAccess().getEmployeesAssignment_2(), "rule__Company__EmployeesAssignment_2");
 					put(grammarAccess.getCompanyAccess().getProjectAssignment_3(), "rule__Company__ProjectAssignment_3");
@@ -51,6 +52,9 @@ public class ProjectDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEmployeeAccess().getHeightAssignment_3_1(), "rule__Employee__HeightAssignment_3_1");
 					put(grammarAccess.getProjectAccess().getNameAssignment_1(), "rule__Project__NameAssignment_1");
 					put(grammarAccess.getProjectAccess().getTypeAssignment_3(), "rule__Project__TypeAssignment_3");
+					put(grammarAccess.getProjectAccess().getTasksAssignment_5(), "rule__Project__TasksAssignment_5");
+					put(grammarAccess.getTaskAccess().getNameAssignment_1(), "rule__Task__NameAssignment_1");
+					put(grammarAccess.getTaskAccess().getTypeAssignment_2(), "rule__Task__TypeAssignment_2");
 				}
 			};
 		}

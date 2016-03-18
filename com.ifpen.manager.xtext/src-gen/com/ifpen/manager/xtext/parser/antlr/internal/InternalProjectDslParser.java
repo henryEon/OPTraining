@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalProjectDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Company'", "'employees'", "'{'", "'}'", "'Employee'", "'weigh'", "'height'", "'Project'", "'type'", "'development'", "'documentation'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Company'", "'employees'", "'{'", "'}'", "'Employee'", "'weight'", "'height'", "'Project'", "'type'", "'Task'", "'development'", "'documentation'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -40,6 +40,7 @@ public class InternalProjectDslParser extends AbstractInternalAntlrParser {
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_INT=5;
+    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__20=20;
     public static final int T__21=21;
@@ -437,7 +438,7 @@ public class InternalProjectDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEmployee"
-    // InternalProjectDsl.g:201:1: ruleEmployee returns [EObject current=null] : (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'weigh' ( (lv_weight_3_0= RULE_INT ) ) )? (otherlv_4= 'height' ( (lv_height_5_0= RULE_INT ) ) )? ) ;
+    // InternalProjectDsl.g:201:1: ruleEmployee returns [EObject current=null] : (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'weight' ( (lv_weight_3_0= RULE_INT ) ) )? (otherlv_4= 'height' ( (lv_height_5_0= RULE_INT ) ) )? ) ;
     public final EObject ruleEmployee() throws RecognitionException {
         EObject current = null;
 
@@ -452,11 +453,11 @@ public class InternalProjectDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalProjectDsl.g:207:2: ( (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'weigh' ( (lv_weight_3_0= RULE_INT ) ) )? (otherlv_4= 'height' ( (lv_height_5_0= RULE_INT ) ) )? ) )
-            // InternalProjectDsl.g:208:2: (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'weigh' ( (lv_weight_3_0= RULE_INT ) ) )? (otherlv_4= 'height' ( (lv_height_5_0= RULE_INT ) ) )? )
+            // InternalProjectDsl.g:207:2: ( (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'weight' ( (lv_weight_3_0= RULE_INT ) ) )? (otherlv_4= 'height' ( (lv_height_5_0= RULE_INT ) ) )? ) )
+            // InternalProjectDsl.g:208:2: (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'weight' ( (lv_weight_3_0= RULE_INT ) ) )? (otherlv_4= 'height' ( (lv_height_5_0= RULE_INT ) ) )? )
             {
-            // InternalProjectDsl.g:208:2: (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'weigh' ( (lv_weight_3_0= RULE_INT ) ) )? (otherlv_4= 'height' ( (lv_height_5_0= RULE_INT ) ) )? )
-            // InternalProjectDsl.g:209:3: otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'weigh' ( (lv_weight_3_0= RULE_INT ) ) )? (otherlv_4= 'height' ( (lv_height_5_0= RULE_INT ) ) )?
+            // InternalProjectDsl.g:208:2: (otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'weight' ( (lv_weight_3_0= RULE_INT ) ) )? (otherlv_4= 'height' ( (lv_height_5_0= RULE_INT ) ) )? )
+            // InternalProjectDsl.g:209:3: otherlv_0= 'Employee' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'weight' ( (lv_weight_3_0= RULE_INT ) ) )? (otherlv_4= 'height' ( (lv_height_5_0= RULE_INT ) ) )?
             {
             otherlv_0=(Token)match(input,15,FOLLOW_3); 
 
@@ -488,7 +489,7 @@ public class InternalProjectDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalProjectDsl.g:231:3: (otherlv_2= 'weigh' ( (lv_weight_3_0= RULE_INT ) ) )?
+            // InternalProjectDsl.g:231:3: (otherlv_2= 'weight' ( (lv_weight_3_0= RULE_INT ) ) )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -497,11 +498,11 @@ public class InternalProjectDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalProjectDsl.g:232:4: otherlv_2= 'weigh' ( (lv_weight_3_0= RULE_INT ) )
+                    // InternalProjectDsl.g:232:4: otherlv_2= 'weight' ( (lv_weight_3_0= RULE_INT ) )
                     {
                     otherlv_2=(Token)match(input,16,FOLLOW_10); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getEmployeeAccess().getWeighKeyword_2_0());
+                    				newLeafNode(otherlv_2, grammarAccess.getEmployeeAccess().getWeightKeyword_2_0());
                     			
                     // InternalProjectDsl.g:236:4: ( (lv_weight_3_0= RULE_INT ) )
                     // InternalProjectDsl.g:237:5: (lv_weight_3_0= RULE_INT )
@@ -641,25 +642,29 @@ public class InternalProjectDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProject"
-    // InternalProjectDsl.g:290:1: ruleProject returns [EObject current=null] : (otherlv_0= 'Project' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruletaskType ) ) ) ;
+    // InternalProjectDsl.g:290:1: ruleProject returns [EObject current=null] : (otherlv_0= 'Project' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruletaskType ) ) otherlv_4= '{' ( (lv_tasks_5_0= ruleTask ) )+ otherlv_6= '}' ) ;
     public final EObject ruleProject() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_name_1_0=null;
         Token otherlv_2=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
         Enumerator lv_type_3_0 = null;
+
+        EObject lv_tasks_5_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalProjectDsl.g:296:2: ( (otherlv_0= 'Project' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruletaskType ) ) ) )
-            // InternalProjectDsl.g:297:2: (otherlv_0= 'Project' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruletaskType ) ) )
+            // InternalProjectDsl.g:296:2: ( (otherlv_0= 'Project' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruletaskType ) ) otherlv_4= '{' ( (lv_tasks_5_0= ruleTask ) )+ otherlv_6= '}' ) )
+            // InternalProjectDsl.g:297:2: (otherlv_0= 'Project' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruletaskType ) ) otherlv_4= '{' ( (lv_tasks_5_0= ruleTask ) )+ otherlv_6= '}' )
             {
-            // InternalProjectDsl.g:297:2: (otherlv_0= 'Project' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruletaskType ) ) )
-            // InternalProjectDsl.g:298:3: otherlv_0= 'Project' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruletaskType ) )
+            // InternalProjectDsl.g:297:2: (otherlv_0= 'Project' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruletaskType ) ) otherlv_4= '{' ( (lv_tasks_5_0= ruleTask ) )+ otherlv_6= '}' )
+            // InternalProjectDsl.g:298:3: otherlv_0= 'Project' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'type' ( (lv_type_3_0= ruletaskType ) ) otherlv_4= '{' ( (lv_tasks_5_0= ruleTask ) )+ otherlv_6= '}'
             {
             otherlv_0=(Token)match(input,18,FOLLOW_3); 
 
@@ -704,7 +709,7 @@ public class InternalProjectDslParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getProjectAccess().getTypeTaskTypeEnumRuleCall_3_0());
             				
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_6);
             lv_type_3_0=ruletaskType();
 
             state._fsp--;
@@ -717,6 +722,207 @@ public class InternalProjectDslParser extends AbstractInternalAntlrParser {
             						current,
             						"type",
             						lv_type_3_0,
+            						"com.ifpen.manager.xtext.ProjectDsl.taskType");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,13,FOLLOW_14); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getProjectAccess().getLeftCurlyBracketKeyword_4());
+            		
+            // InternalProjectDsl.g:347:3: ( (lv_tasks_5_0= ruleTask ) )+
+            int cnt4=0;
+            loop4:
+            do {
+                int alt4=2;
+                int LA4_0 = input.LA(1);
+
+                if ( (LA4_0==20) ) {
+                    alt4=1;
+                }
+
+
+                switch (alt4) {
+            	case 1 :
+            	    // InternalProjectDsl.g:348:4: (lv_tasks_5_0= ruleTask )
+            	    {
+            	    // InternalProjectDsl.g:348:4: (lv_tasks_5_0= ruleTask )
+            	    // InternalProjectDsl.g:349:5: lv_tasks_5_0= ruleTask
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getProjectAccess().getTasksTaskParserRuleCall_5_0());
+            	    				
+            	    pushFollow(FOLLOW_15);
+            	    lv_tasks_5_0=ruleTask();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getProjectRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"tasks",
+            	    						lv_tasks_5_0,
+            	    						"com.ifpen.manager.xtext.ProjectDsl.Task");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt4 >= 1 ) break loop4;
+                        EarlyExitException eee =
+                            new EarlyExitException(4, input);
+                        throw eee;
+                }
+                cnt4++;
+            } while (true);
+
+            otherlv_6=(Token)match(input,14,FOLLOW_2); 
+
+            			newLeafNode(otherlv_6, grammarAccess.getProjectAccess().getRightCurlyBracketKeyword_6());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleProject"
+
+
+    // $ANTLR start "entryRuleTask"
+    // InternalProjectDsl.g:374:1: entryRuleTask returns [EObject current=null] : iv_ruleTask= ruleTask EOF ;
+    public final EObject entryRuleTask() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleTask = null;
+
+
+        try {
+            // InternalProjectDsl.g:374:45: (iv_ruleTask= ruleTask EOF )
+            // InternalProjectDsl.g:375:2: iv_ruleTask= ruleTask EOF
+            {
+             newCompositeNode(grammarAccess.getTaskRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleTask=ruleTask();
+
+            state._fsp--;
+
+             current =iv_ruleTask; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleTask"
+
+
+    // $ANTLR start "ruleTask"
+    // InternalProjectDsl.g:381:1: ruleTask returns [EObject current=null] : (otherlv_0= 'Task' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruletaskType ) ) ) ;
+    public final EObject ruleTask() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_name_1_0=null;
+        Enumerator lv_type_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalProjectDsl.g:387:2: ( (otherlv_0= 'Task' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruletaskType ) ) ) )
+            // InternalProjectDsl.g:388:2: (otherlv_0= 'Task' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruletaskType ) ) )
+            {
+            // InternalProjectDsl.g:388:2: (otherlv_0= 'Task' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruletaskType ) ) )
+            // InternalProjectDsl.g:389:3: otherlv_0= 'Task' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= ruletaskType ) )
+            {
+            otherlv_0=(Token)match(input,20,FOLLOW_3); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getTaskAccess().getTaskKeyword_0());
+            		
+            // InternalProjectDsl.g:393:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalProjectDsl.g:394:4: (lv_name_1_0= RULE_ID )
+            {
+            // InternalProjectDsl.g:394:4: (lv_name_1_0= RULE_ID )
+            // InternalProjectDsl.g:395:5: lv_name_1_0= RULE_ID
+            {
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_13); 
+
+            					newLeafNode(lv_name_1_0, grammarAccess.getTaskAccess().getNameIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getTaskRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalProjectDsl.g:411:3: ( (lv_type_2_0= ruletaskType ) )
+            // InternalProjectDsl.g:412:4: (lv_type_2_0= ruletaskType )
+            {
+            // InternalProjectDsl.g:412:4: (lv_type_2_0= ruletaskType )
+            // InternalProjectDsl.g:413:5: lv_type_2_0= ruletaskType
+            {
+
+            					newCompositeNode(grammarAccess.getTaskAccess().getTypeTaskTypeEnumRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_type_2_0=ruletaskType();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getTaskRule());
+            					}
+            					set(
+            						current,
+            						"type",
+            						lv_type_2_0,
             						"com.ifpen.manager.xtext.ProjectDsl.taskType");
             					afterParserOrEnumRuleCall();
             				
@@ -745,11 +951,11 @@ public class InternalProjectDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleProject"
+    // $ANTLR end "ruleTask"
 
 
     // $ANTLR start "ruletaskType"
-    // InternalProjectDsl.g:347:1: ruletaskType returns [Enumerator current=null] : ( (enumLiteral_0= 'development' ) | (enumLiteral_1= 'documentation' ) ) ;
+    // InternalProjectDsl.g:434:1: ruletaskType returns [Enumerator current=null] : ( (enumLiteral_0= 'development' ) | (enumLiteral_1= 'documentation' ) ) ;
     public final Enumerator ruletaskType() throws RecognitionException {
         Enumerator current = null;
 
@@ -760,33 +966,33 @@ public class InternalProjectDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalProjectDsl.g:353:2: ( ( (enumLiteral_0= 'development' ) | (enumLiteral_1= 'documentation' ) ) )
-            // InternalProjectDsl.g:354:2: ( (enumLiteral_0= 'development' ) | (enumLiteral_1= 'documentation' ) )
+            // InternalProjectDsl.g:440:2: ( ( (enumLiteral_0= 'development' ) | (enumLiteral_1= 'documentation' ) ) )
+            // InternalProjectDsl.g:441:2: ( (enumLiteral_0= 'development' ) | (enumLiteral_1= 'documentation' ) )
             {
-            // InternalProjectDsl.g:354:2: ( (enumLiteral_0= 'development' ) | (enumLiteral_1= 'documentation' ) )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
+            // InternalProjectDsl.g:441:2: ( (enumLiteral_0= 'development' ) | (enumLiteral_1= 'documentation' ) )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA4_0==20) ) {
-                alt4=1;
+            if ( (LA5_0==21) ) {
+                alt5=1;
             }
-            else if ( (LA4_0==21) ) {
-                alt4=2;
+            else if ( (LA5_0==22) ) {
+                alt5=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
-            switch (alt4) {
+            switch (alt5) {
                 case 1 :
-                    // InternalProjectDsl.g:355:3: (enumLiteral_0= 'development' )
+                    // InternalProjectDsl.g:442:3: (enumLiteral_0= 'development' )
                     {
-                    // InternalProjectDsl.g:355:3: (enumLiteral_0= 'development' )
-                    // InternalProjectDsl.g:356:4: enumLiteral_0= 'development'
+                    // InternalProjectDsl.g:442:3: (enumLiteral_0= 'development' )
+                    // InternalProjectDsl.g:443:4: enumLiteral_0= 'development'
                     {
-                    enumLiteral_0=(Token)match(input,20,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,21,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskTypeAccess().getDevelopmentEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getTaskTypeAccess().getDevelopmentEnumLiteralDeclaration_0());
@@ -798,12 +1004,12 @@ public class InternalProjectDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalProjectDsl.g:363:3: (enumLiteral_1= 'documentation' )
+                    // InternalProjectDsl.g:450:3: (enumLiteral_1= 'documentation' )
                     {
-                    // InternalProjectDsl.g:363:3: (enumLiteral_1= 'documentation' )
-                    // InternalProjectDsl.g:364:4: enumLiteral_1= 'documentation'
+                    // InternalProjectDsl.g:450:3: (enumLiteral_1= 'documentation' )
+                    // InternalProjectDsl.g:451:4: enumLiteral_1= 'documentation'
                     {
-                    enumLiteral_1=(Token)match(input,21,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,22,FOLLOW_2); 
 
                     				current = grammarAccess.getTaskTypeAccess().getDocumentationEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getTaskTypeAccess().getDocumentationEnumLiteralDeclaration_1());
@@ -852,6 +1058,8 @@ public class InternalProjectDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020002L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000300000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000104000L});
 
 }

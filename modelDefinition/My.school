@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<school:SchoolYear xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:school="http://com.ifpen.school/1.0">
+  <ecole eleves="//@eleves.1" name="cp"/>
+  <ecole eleves="//@eleves.0 //@eleves.2" name="cm1"/>
+  <eleves name="louis"/>
+  <eleves name="andré"/>
+  <eleves name="marcel"/>
+</school:SchoolYear>

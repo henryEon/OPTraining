@@ -107,7 +107,7 @@ public class ProjectDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cWeighKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cWeightKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cWeightAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cWeightINTTerminalRuleCall_2_1_0 = (RuleCall)cWeightAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
@@ -116,10 +116,10 @@ public class ProjectDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cHeightINTTerminalRuleCall_3_1_0 = (RuleCall)cHeightAssignment_3_1.eContents().get(0);
 		
 		//Employee:
-		//	'Employee' name=ID ('weigh' weight=INT)? ('height' height=INT)?;
+		//	'Employee' name=ID ('weight' weight=INT)? ('height' height=INT)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Employee' name=ID ('weigh' weight=INT)? ('height' height=INT)?
+		//'Employee' name=ID ('weight' weight=INT)? ('height' height=INT)?
 		public Group getGroup() { return cGroup; }
 		
 		//'Employee'
@@ -131,11 +131,11 @@ public class ProjectDslGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//('weigh' weight=INT)?
+		//('weight' weight=INT)?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//'weigh'
-		public Keyword getWeighKeyword_2_0() { return cWeighKeyword_2_0; }
+		//'weight'
+		public Keyword getWeightKeyword_2_0() { return cWeightKeyword_2_0; }
 		
 		//weight=INT
 		public Assignment getWeightAssignment_2_1() { return cWeightAssignment_2_1; }
@@ -164,14 +164,21 @@ public class ProjectDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTypeKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cTypeTaskTypeEnumRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cTasksAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTasksTaskParserRuleCall_5_0 = (RuleCall)cTasksAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Project:
 		//	'Project'
 		//	name=ID
-		//	'type' type=taskType;
+		//	'type' type=taskType
+		//	'{'
+		//	tasks+=Task+
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Project' name=ID 'type' type=taskType
+		//'Project' name=ID 'type' type=taskType '{' tasks+=Task+ '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'Project'
@@ -191,6 +198,49 @@ public class ProjectDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//taskType
 		public RuleCall getTypeTaskTypeEnumRuleCall_3_0() { return cTypeTaskTypeEnumRuleCall_3_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		
+		//tasks+=Task+
+		public Assignment getTasksAssignment_5() { return cTasksAssignment_5; }
+		
+		//Task
+		public RuleCall getTasksTaskParserRuleCall_5_0() { return cTasksTaskParserRuleCall_5_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+	public class TaskElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ifpen.manager.xtext.ProjectDsl.Task");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTaskKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeTaskTypeEnumRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		
+		//Task:
+		//	'Task' name=ID type=taskType;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Task' name=ID type=taskType
+		public Group getGroup() { return cGroup; }
+		
+		//'Task'
+		public Keyword getTaskKeyword_0() { return cTaskKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//type=taskType
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+		
+		//taskType
+		public RuleCall getTypeTaskTypeEnumRuleCall_2_0() { return cTypeTaskTypeEnumRuleCall_2_0; }
 	}
 	
 	public class TaskTypeElements extends AbstractEnumRuleElementFinder {
@@ -226,6 +276,7 @@ public class ProjectDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final EmployeeElements pEmployee;
 	private final TaskTypeElements eTaskType;
 	private final ProjectElements pProject;
+	private final TaskElements pTask;
 	
 	private final Grammar grammar;
 	
@@ -241,6 +292,7 @@ public class ProjectDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pEmployee = new EmployeeElements();
 		this.eTaskType = new TaskTypeElements();
 		this.pProject = new ProjectElements();
+		this.pTask = new TaskElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -296,7 +348,7 @@ public class ProjectDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Employee:
-	//	'Employee' name=ID ('weigh' weight=INT)? ('height' height=INT)?;
+	//	'Employee' name=ID ('weight' weight=INT)? ('height' height=INT)?;
 	public EmployeeElements getEmployeeAccess() {
 		return pEmployee;
 	}
@@ -318,13 +370,26 @@ public class ProjectDslGrammarAccess extends AbstractGrammarElementFinder {
 	//Project:
 	//	'Project'
 	//	name=ID
-	//	'type' type=taskType;
+	//	'type' type=taskType
+	//	'{'
+	//	tasks+=Task+
+	//	'}';
 	public ProjectElements getProjectAccess() {
 		return pProject;
 	}
 	
 	public ParserRule getProjectRule() {
 		return getProjectAccess().getRule();
+	}
+	
+	//Task:
+	//	'Task' name=ID type=taskType;
+	public TaskElements getTaskAccess() {
+		return pTask;
+	}
+	
+	public ParserRule getTaskRule() {
+		return getTaskAccess().getRule();
 	}
 	
 	//terminal ID:

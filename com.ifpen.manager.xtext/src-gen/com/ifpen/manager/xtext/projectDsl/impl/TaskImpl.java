@@ -3,43 +3,32 @@
  */
 package com.ifpen.manager.xtext.projectDsl.impl;
 
-import com.ifpen.manager.xtext.projectDsl.Project;
 import com.ifpen.manager.xtext.projectDsl.ProjectDslPackage;
 import com.ifpen.manager.xtext.projectDsl.Task;
 import com.ifpen.manager.xtext.projectDsl.taskType;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Project</b></em>'.
+ * An implementation of the model object '<em><b>Task</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.ifpen.manager.xtext.projectDsl.impl.ProjectImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.ifpen.manager.xtext.projectDsl.impl.ProjectImpl#getType <em>Type</em>}</li>
- *   <li>{@link com.ifpen.manager.xtext.projectDsl.impl.ProjectImpl#getTasks <em>Tasks</em>}</li>
+ *   <li>{@link com.ifpen.manager.xtext.projectDsl.impl.TaskImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.ifpen.manager.xtext.projectDsl.impl.TaskImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
+public class TaskImpl extends MinimalEObjectImpl.Container implements Task
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -82,21 +71,11 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
   protected taskType type = TYPE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getTasks() <em>Tasks</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTasks()
-   * @generated
-   * @ordered
-   */
-  protected EList<Task> tasks;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ProjectImpl()
+  protected TaskImpl()
   {
     super();
   }
@@ -109,7 +88,7 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
   @Override
   protected EClass eStaticClass()
   {
-    return ProjectDslPackage.Literals.PROJECT;
+    return ProjectDslPackage.Literals.TASK;
   }
 
   /**
@@ -132,7 +111,7 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProjectDslPackage.PROJECT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ProjectDslPackage.TASK__NAME, oldName, name));
   }
 
   /**
@@ -155,37 +134,7 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
     taskType oldType = type;
     type = newType == null ? TYPE_EDEFAULT : newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProjectDslPackage.PROJECT__TYPE, oldType, type));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Task> getTasks()
-  {
-    if (tasks == null)
-    {
-      tasks = new EObjectContainmentEList<Task>(Task.class, this, ProjectDslPackage.PROJECT__TASKS);
-    }
-    return tasks;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case ProjectDslPackage.PROJECT__TASKS:
-        return ((InternalEList<?>)getTasks()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, ProjectDslPackage.TASK__TYPE, oldType, type));
   }
 
   /**
@@ -198,12 +147,10 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
   {
     switch (featureID)
     {
-      case ProjectDslPackage.PROJECT__NAME:
+      case ProjectDslPackage.TASK__NAME:
         return getName();
-      case ProjectDslPackage.PROJECT__TYPE:
+      case ProjectDslPackage.TASK__TYPE:
         return getType();
-      case ProjectDslPackage.PROJECT__TASKS:
-        return getTasks();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -213,21 +160,16 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case ProjectDslPackage.PROJECT__NAME:
+      case ProjectDslPackage.TASK__NAME:
         setName((String)newValue);
         return;
-      case ProjectDslPackage.PROJECT__TYPE:
+      case ProjectDslPackage.TASK__TYPE:
         setType((taskType)newValue);
-        return;
-      case ProjectDslPackage.PROJECT__TASKS:
-        getTasks().clear();
-        getTasks().addAll((Collection<? extends Task>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -243,14 +185,11 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
   {
     switch (featureID)
     {
-      case ProjectDslPackage.PROJECT__NAME:
+      case ProjectDslPackage.TASK__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case ProjectDslPackage.PROJECT__TYPE:
+      case ProjectDslPackage.TASK__TYPE:
         setType(TYPE_EDEFAULT);
-        return;
-      case ProjectDslPackage.PROJECT__TASKS:
-        getTasks().clear();
         return;
     }
     super.eUnset(featureID);
@@ -266,12 +205,10 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
   {
     switch (featureID)
     {
-      case ProjectDslPackage.PROJECT__NAME:
+      case ProjectDslPackage.TASK__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ProjectDslPackage.PROJECT__TYPE:
+      case ProjectDslPackage.TASK__TYPE:
         return type != TYPE_EDEFAULT;
-      case ProjectDslPackage.PROJECT__TASKS:
-        return tasks != null && !tasks.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -295,4 +232,4 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
     return result.toString();
   }
 
-} //ProjectImpl
+} //TaskImpl

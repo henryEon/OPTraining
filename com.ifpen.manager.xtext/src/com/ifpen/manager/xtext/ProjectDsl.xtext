@@ -27,4 +27,12 @@ Project:
 	'Project'
 	name=ID
 	'type' type=taskType 
+	'{'
+		(tasks+=Task)+
+	'}'
 ;
+
+Task:
+	'Task' name=ID type=taskType
+;
+
